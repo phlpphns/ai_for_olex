@@ -1,0 +1,25 @@
+
+phai_new{
+  gui{
+    location = 'tools'
+      .type = str
+      .help = The tab item where the phai_new GUI shall appear.
+    before = 'images'
+      .type = str
+      .help = The tool before which the phai_new GUI shall appear.
+    }
+
+  variables{
+    cycles = 5
+      .type = int
+      .help = Number of cycles to let PhAI run.
+
+  version_phai = 0
+      .type = int
+      .help = ID of version of PhAI.
+    
+  name_phai = ""
+      .type = str
+      .help = The name of the version of PhAI.
+  }
+}

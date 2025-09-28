@@ -1,0 +1,89 @@
+
+<!-- #include tool-top gui/blocks/tool-top.htm;image=#image;onclick=#onclick;1; -->
+
+<!-- #include tool-row-help gui/blocks/tool-row-help.htm;name=phai_new_1; help_ext=phai_new_1;1; -->
+
+  <td ALIGN='left' width='80%'>
+    <b>Welcome to phase retrieval by PhAI</b>
+  </td>
+
+<!-- #include row_table_off gui/blocks/row_table_off.htm;1; -->
+
+<!-- #include tool-row-help gui/blocks/tool-row-help.htm;name=phai_new_2; help_ext=phai_new_2;1; -->
+  <td width='2%'>
+    $+
+      html.Snippet(GetVar(default_link),
+      "value=RUN PhAI",
+      "name=RUN_PhAI_BUTTON",
+      "onclick=spy.phai_new.solve(html.GetValue(cycles), 'auto')",
+      "td1=<td width='20%' align='left'>",
+      )
+    $-
+  <td width='2%'>
+  <td align='left' width="10%"><b>Cycles:</b></td>
+    $+
+      html.Snippet("gui/snippets/input-text-td",
+      "name=CYCLES",
+      "value=spy.GetParam(phai_new.variables.cycles)",
+      "onchange=spy.SetParam(phai_new.variables.cycles, html.GetValue(~name~))>>labels -v>>spy.phai_new.get_cycles()",
+      "td1=<td width='10%'>"
+      )
+    $-
+  <td width='2%'>
+    $+
+      html.Snippet("gui/snippets/input-combo-td",
+      "name=LIST_PHAI_VERSIONS",
+      "value='select version of PhAI here'",
+      "items=spy.phai_new.get_versions_phai()",
+      "onenter=html.SetValue(~name~, '')",
+      "onchange=spy.phai_new.set_id(html.GetValue(~name~))>>spy.phai_new.init_plugin()",
+      "readonly=False",
+      "td1=<td width='60%'>"
+      )
+    $-
+    <td width='2%'>
+
+  
+<!-- #include row_table_off gui/blocks/row_table_off.htm;1; -->
+
+
+
+<!-- #include h3-phai_new-extras $GetVar(phai_new_plugin_path)\h3-phai_new-extras.htm;gui\blocks\tool-h3-off.htm;image=h3-phai_new_extras;onclick=;colspan=1;2; -->
+
+<!-- #include tool-footer gui/blocks/tool-footer.htm;colspan=2;1; -->
+
+
+<!-- #include tool-row-help gui/blocks/tool-row-help.htm; help_ext=Results;1; -->
+  
+<!--   <td align='left' width="20%">
+    <b>PhAI options:</b>
+  </td>
+    $+
+      html.Snippet(GetVar(default_link),
+      "value=CHECK FOR UPDATES",
+      "name=UPDATE_BUTTON",
+      "onclick=spy.phai_new.create_solution_map(html.GetValue(cycles), 'auto')",
+      "td1=<td width='20%' align='left'>",
+      )
+    $-
+    <td width='2%'>
+    $+
+      html.Snippet(GetVar(default_link),
+      "value=Start Refinement",
+      "name=PHAI_Start_Refinement_BUTTON",
+      "onclick=spy.phai_new.print_hkl_info()",
+      "td1=<td width='20%' align='left'>"
+      )
+    $-
+    <td width='2%'>
+    $+
+      html.Snippet(GetVar(default_link),
+      "value=Install PhAI",
+      "name=PHAI_Install_PhAI_BUTTON",
+      "onclick=spy.phai_new.print_formula()",
+      "td1=<td width='20%' align='left'>"
+      )
+    $-
+    <td width='2%'> -->
+
+<!-- #include row_table_off gui/blocks/row_table_off.htm;1; -->

@@ -1,0 +1,5 @@
+
+  p_name = phai_new
+  p_htm = phai_new
+  p_img = [("phai_new",'h1'), ("phai_new-Extras",'h3')]
+  p_scope = phai_new

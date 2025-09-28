@@ -1,0 +1,26 @@
+
+<!-- #include tool-h3 gui\blocks\tool-h3.htm;image=#image;colspan=1;1; -->
+<!-- #include tool-row-help gui/blocks/tool-row-help.htm;name=h3-phai_new_1; help_ext=phai_new_1;1; -->
+
+
+    $+
+    html.Snippet(GetVar(default_link),
+    "value=Reload Plugin",
+    "onclick=py.run C:\Users\pkv190\portable_programs\olex2-win64/util/pyUtil/PluginLib//plugin-phai_new/phai_new.py",
+    )$-
+
+    $+
+    html.Snippet(GetVar(default_link),
+    "value=Settings",
+    "onclick=spy.EditParams(phai_new)",
+    )$-
+
+    $+
+    html.Snippet(GetVar(default_link),
+    "value=Open Folder",
+    "onclick=shell C:\Users\pkv190\portable_programs\olex2-win64/util/pyUtil/PluginLib//plugin-phai_new",
+    )$-
+
+
+
+<!-- #include row_table_off gui\blocks\row_table_off.htm;1; -->

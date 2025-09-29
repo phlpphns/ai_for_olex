@@ -98,7 +98,7 @@ def main():
     """
     Main function to check context and dispatch repository processing.
     """
-    config_file = "config.json"
+    config_file = "config_plugins_ai_for_olex.json"
     if not os.path.exists(config_file):
         print(f"Error: Configuration file '{config_file}' not found.", file=sys.stderr)
         sys.exit(1)
@@ -112,9 +112,11 @@ def main():
 
     # --- Dispatcher Logic ---
 
+    config_plugin = config_data['plugin_phai_for_olex']
+
     # Scenario A: Check if we are inside a specific plugin directory
     target_repo_config = None
-    for key, config in config_data.items():
+    for key, config in config_plugin.items():
         if isinstance(config, dict) and config.get("dir") == current_dir_name:
             target_repo_config = config
             break
@@ -128,7 +130,7 @@ def main():
     elif must_be_in and current_dir_name == must_be_in[-1]:
         # We are in the main container, so sync all configured repos.
         print(f"== Mode: Batch Sync in '{current_dir_name}' ==")
-        for key, config in config_data.items():
+        for key, config in config_plugin.items():
             if isinstance(config, dict) and "dir" in config:
                 # Target is a new subdirectory for each plugin
                 target_dir = os.path.join(cwd, config["dir"])
@@ -148,8 +150,7 @@ def main():
         )
         sys.exit(1)
 
-    print("\nScript finished successfully at 6:05 PM on Sunday in Copenhagen.")
-
+    print("\nScript finished successfully.")
 
 if __name__ == "__main__":
     main()

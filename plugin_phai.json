@@ -1,0 +1,24 @@
+{
+    "must_be_in": [
+        "pyUtil",
+        "PluginLib"
+    ],
+    "plugin_phai_for_olex": {
+        "data_plugin": {
+            "dir": "plugin_phai",
+            "git_url": "https://github.com/phlpphns/ai_for_olex",
+            "branch": "main",
+            "sparse": true,
+            "directories_checkout": [
+                "PhAI/",
+                "plugin-phai_for_olex/"
+            ]
+        },
+        "data_module_phai": {
+            "dir": "ai_for_crystallography",
+            "git_url": "https://github.com/phlpphns/ai_for_crystallography",
+            "branch": "main",
+            "sparse": false
+        }
+    }
+}
